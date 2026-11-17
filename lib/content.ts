@@ -1,4 +1,4 @@
-import { BarChart3, Clapperboard, MessageSquareText, PhoneCall, type LucideIcon } from "lucide-react";
+import { BarChart3, Clapperboard, MessageSquareText, PhoneCall, UserSearch, Workflow, type LucideIcon } from "lucide-react";
 
 // ---------------------------------------------------------------------------
 // All site copy lives here. Replace the PLACEHOLDER values before launch.
@@ -7,9 +7,9 @@ import { BarChart3, Clapperboard, MessageSquareText, PhoneCall, type LucideIcon 
 export const site = {
   name: "growthmaxxing",
   url: "https://growthmaxxing.agency",
-  title: "Growthmaxxing | AI growth systems for businesses",
+  title: "Growthmaxxing | AI agents for sales, hiring and admin",
   description:
-    "Growthmaxxing builds the AI systems that find customers, answer them instantly, and follow up until they buy. Done for you, owned by you.",
+    "Growthmaxxing builds AI agents that find customers, answer them instantly, follow up until they buy, recruit your team and run the back office. Done for you, owned by you.",
   email: "hello@growthmaxxing.agency", // PLACEHOLDER: confirm inbox exists
   calendarUrl: "https://cal.com/growthmaxxing/30min", // PLACEHOLDER: replace with real booking link
   year: 2026,
@@ -26,9 +26,9 @@ export const nav = {
 };
 
 export const hero = {
-  chip: "AI growth systems for businesses",
+  chip: "AI agents for sales, hiring and admin",
   headline: ["More leads.", "Faster replies.", "Less busywork."],
-  body: "Growthmaxxing builds the AI systems that find customers, answer them instantly, and follow up until they buy. Done for you, owned by you.",
+  body: "Growthmaxxing builds AI agents that find customers, answer them instantly, follow up until they buy, recruit your team and run the back office. Done for you, owned by you.",
   primary: "Book a free 30-min call",
   secondary: "See how it works",
   note: "For businesses that already have demand and are losing it to slow replies, thin follow-up, or tired ads.",
@@ -36,6 +36,8 @@ export const hero = {
     "Lead capture",
     "AI voice receptionist",
     "Follow-up automation",
+    "Recruitment agent",
+    "Admin agents",
     "AI ad creative",
     "Landing pages",
     "Tracking",
@@ -62,8 +64,8 @@ export type Service = {
 };
 
 export const services = {
-  heading: "Four systems. One goal: more revenue.",
-  intro: "Pick the one that fixes your biggest leak. Add the rest when you are ready.",
+  heading: "AI agents for every part of the business.",
+  intro: "Sales, hiring and back office. Start with the one that fixes your biggest leak, then add more agents as you grow.",
   flagshipLabel: "Flagship",
   items: [
     {
@@ -91,6 +93,18 @@ export const services = {
       outcome: "Clean tracking, and a weekly written update with your real numbers.",
       tags: ["Pixel/CAPI", "UTMs", "Weekly read"],
       icon: BarChart3,
+    },
+    {
+      title: "Recruitment agent",
+      outcome: "Posts roles, screens applicants, books interviews and keeps candidates warm, so hiring stops eating your week.",
+      tags: ["Screening", "Scheduling", "Candidate follow-up"],
+      icon: UserSearch,
+    },
+    {
+      title: "Admin agents",
+      outcome: "Back-office jobs done for you: invoicing, data entry, inbox triage, bookings and reports, running in the background.",
+      tags: ["Invoicing", "Inbox", "Data entry", "Ops"],
+      icon: Workflow,
     },
   ] satisfies Service[],
 };
@@ -176,7 +190,7 @@ export const cta = {
 export const footer = {
   tagline: "AI growth systems that find customers, answer them fast, and follow up until they buy.",
   columns: [
-    { title: "Services", links: [{ label: "Lead capture", href: "#services" }, { label: "AI receptionist", href: "#services" }, { label: "AI ad creative", href: "#services" }, { label: "Reporting", href: "#services" }] },
+    { title: "Services", links: [{ label: "Lead capture", href: "#services" }, { label: "AI receptionist", href: "#services" }, { label: "AI ad creative", href: "#services" }, { label: "Recruitment", href: "#services" }, { label: "Admin agents", href: "#services" }, { label: "Reporting", href: "#services" }] },
     { title: "Process", links: [{ label: "How it works", href: "#process" }, { label: "The weekly loop", href: "#loop" }, { label: "Proof", href: "#proof" }] },
     { title: "FAQ", links: [{ label: "Ownership", href: "#faq" }, { label: "Results", href: "#faq" }, { label: "Timing", href: "#faq" }] },
     { title: "Contact", links: [{ label: "Request a review", href: "#contact" }, { label: site.email, href: `mailto:${site.email}` }] },

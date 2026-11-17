@@ -3,8 +3,8 @@ import { IconCircle, h2, section } from "./ui";
 import { Reveal } from "./Motion";
 
 const tagList = (tags: string[], cls = "text-muted") => (
-  <ul className={`mt-5 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs uppercase tracking-[0.1em] ${cls}`}>
-    {tags.map((t) => <li key={t}>{t}</li>)}
+  <ul className={`mt-5 flex flex-wrap gap-2 text-xs ${cls}`}>
+    {tags.map((t) => <li key={t} className="rounded-full border border-current px-3 py-0.5">{t}</li>)}
   </ul>
 );
 
@@ -31,7 +31,7 @@ function Bars() {
 function Tiles() {
   return (
     <div aria-hidden className="flex gap-2">
-      {["bg-orange", "bg-orange-glow", "bg-ink"].map((c, i) => (
+      {["bg-orange", "bg-orange-glow", "bg-deep"].map((c, i) => (
         <span key={c} className={`h-16 flex-1 rounded-xl ${c} ${i === 1 ? "-rotate-3" : i === 2 ? "rotate-2" : ""}`} />
       ))}
     </div>
@@ -39,7 +39,7 @@ function Tiles() {
 }
 
 export function Services() {
-  const [flagship, voice, ads, reporting] = services.items;
+  const [flagship, voice, ads, reporting, recruit, admin] = services.items;
   const FIcon = flagship.icon;
   return (
     <section id="services" className={`${section} py-24 sm:py-32`}>
@@ -50,11 +50,11 @@ export function Services() {
 
       <div className="mt-14 grid gap-5 lg:grid-cols-6">
         <Reveal className="lg:col-span-4 lg:row-span-2">
-          <article className="relative flex h-full min-h-[26rem] flex-col justify-between overflow-hidden rounded-[2rem] bg-orange p-8 text-white sm:p-12">
+          <article className="relative flex h-full min-h-[26rem] flex-col justify-between overflow-hidden rounded-[1.5rem] bg-orange p-8 text-white sm:p-12">
             <div aria-hidden className="absolute -right-24 -top-24 size-96 rounded-full bg-orange-glow/60 blur-3xl" />
             <div className="relative">
-              <span className="flex size-16 items-center justify-center rounded-full bg-white text-orange-ink"><FIcon aria-hidden strokeWidth={1.75} className="size-8" /></span>
-              <h3 className="mt-8 max-w-md font-display text-4xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl">{flagship.title}</h3>
+              <span className="flex size-16 items-center justify-center rounded-full bg-white text-[#b8420a]"><FIcon aria-hidden strokeWidth={1.75} className="size-8" /></span>
+              <h3 className="mt-8 max-w-md font-display text-4xl font-bold leading-[1.02] tracking-[0.005em] sm:text-6xl">{flagship.title}</h3>
             </div>
             <div className="relative">
               <p className="mt-8 max-w-lg text-xl font-bold leading-snug">{flagship.outcome}</p>
@@ -64,32 +64,47 @@ export function Services() {
         </Reveal>
 
         <Reveal delay={0.08} className="lg:col-span-2">
-          <article className="h-full rounded-[2rem] border border-line bg-surface p-7 shadow-warm">
+          <article className="h-full rounded-[1.5rem] border border-line bg-surface p-7 shadow-warm">
             <Wave />
-            <h3 className="mt-5 font-display text-2xl font-bold tracking-tight">{voice.title}</h3>
+            <h3 className="mt-5 font-display text-2xl font-bold tracking-[0.005em]">{voice.title}</h3>
             <p className="mt-2 leading-relaxed text-muted">{voice.outcome}</p>
             {tagList(voice.tags)}
           </article>
         </Reveal>
 
         <Reveal delay={0.16} className="lg:col-span-2">
-          <article className="h-full rounded-[2rem] bg-orange-tint p-7">
+          <article className="h-full rounded-[1.5rem] bg-orange-tint p-7">
             <Tiles />
-            <h3 className="mt-5 font-display text-2xl font-bold tracking-tight">{ads.title}</h3>
+            <h3 className="mt-5 font-display text-2xl font-bold tracking-[0.005em]">{ads.title}</h3>
             <p className="mt-2 leading-relaxed text-ink/75">{ads.outcome}</p>
             {tagList(ads.tags, "text-orange-ink")}
           </article>
         </Reveal>
 
-        <Reveal delay={0.1} className="lg:col-span-6">
-          <article className="grid items-center gap-8 rounded-[2rem] border border-line bg-surface p-7 shadow-warm sm:p-10 md:grid-cols-[1.4fr_1fr]">
-            <div>
-              <IconCircle icon={reporting.icon} />
-              <h3 className="mt-5 font-display text-3xl font-bold tracking-tight">{reporting.title}</h3>
-              <p className="mt-2 max-w-lg text-lg leading-relaxed text-muted">{reporting.outcome}</p>
-              {tagList(reporting.tags)}
-            </div>
+        <Reveal delay={0.1} className="lg:col-span-2">
+          <article className="h-full rounded-[1.5rem] border border-line bg-surface p-7 shadow-warm">
             <Bars />
+            <h3 className="mt-5 font-display text-2xl font-bold tracking-[0.005em]">{reporting.title}</h3>
+            <p className="mt-2 leading-relaxed text-muted">{reporting.outcome}</p>
+            {tagList(reporting.tags)}
+          </article>
+        </Reveal>
+
+        <Reveal delay={0.1} className="lg:col-span-3">
+          <article className="h-full rounded-[1.5rem] bg-orange-tint p-7 sm:p-9">
+            <IconCircle icon={recruit.icon} />
+            <h3 className="mt-5 font-display text-3xl font-bold tracking-[0.005em]">{recruit.title}</h3>
+            <p className="mt-2 text-lg leading-relaxed text-ink/75">{recruit.outcome}</p>
+            {tagList(recruit.tags, "text-orange-ink")}
+          </article>
+        </Reveal>
+
+        <Reveal delay={0.16} className="lg:col-span-3">
+          <article className="h-full rounded-[1.5rem] bg-deep p-7 text-white sm:p-9">
+            <span className="inline-flex size-12 items-center justify-center rounded-full bg-orange text-white"><admin.icon aria-hidden strokeWidth={1.75} className="size-6" /></span>
+            <h3 className="mt-5 font-display text-3xl font-bold tracking-[0.005em]">{admin.title}</h3>
+            <p className="mt-2 text-lg leading-relaxed text-white/75">{admin.outcome}</p>
+            {tagList(admin.tags, "text-orange-glow")}
           </article>
         </Reveal>
       </div>

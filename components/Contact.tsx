@@ -7,7 +7,7 @@ import { Button, card, h2, section } from "./ui";
 import { Reveal } from "./Motion";
 
 type Errors = Partial<Record<string, string>>;
-const field = "mt-1.5 w-full rounded-2xl border border-line bg-cream px-4 py-3 text-base text-ink placeholder:text-muted/70 focus:border-orange";
+const field = "mt-1.5 w-full rounded-[1.5rem] border border-line bg-cream px-4 py-3 text-base text-ink placeholder:text-muted/70 focus:border-orange";
 const label = "block text-sm font-bold";
 
 function CopyEmail() {
@@ -61,7 +61,7 @@ function ContactForm() {
     return (
       <div role="status" className={`${card} flex h-full flex-col items-center justify-center p-10 text-center`}>
         <span className="flex size-16 items-center justify-center rounded-full bg-success/10 text-success"><CheckCircle2 aria-hidden strokeWidth={1.75} className="size-9" /></span>
-        <h3 className="mt-5 font-display text-3xl font-extrabold">{contact.success.title}</h3>
+        <h3 className="mt-5 font-display text-3xl font-bold">{contact.success.title}</h3>
         <p className="mt-2 text-muted">{contact.success.body}</p>
       </div>
     );

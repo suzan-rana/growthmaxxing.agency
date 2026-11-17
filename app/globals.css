@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
   --orange: #f26a1b;
   --orange-hover: #d9540a;
-  --orange-tint: #ffe9d6;
+  --orange-tint: #ecd0bb;
   --orange-glow: #ffb27a;
-  /* AA-safe orange for small text on light backgrounds (5.2:1 on cream) */
+  /* AA-safe orange for small text on cream (5.2:1) */
   --orange-ink: #b8420a;
-  --cream: #fff8f1;
-  --surface: #ffffff;
-  --ink: #1b1410;
-  --muted: #6b5e55;
-  --line: #f0e2d4;
+  --cream: #f4e3d3;
+  --surface: #fcf3ed;
+  --ink: #35221a;
+  --muted: #6e4f40;
+  --line: #d9bfab;
   --success: #1f9d6b;
-  --shadow-warm: 0 1px 2px rgba(242, 106, 27, 0.06), 0 8px 24px rgba(242, 106, 27, 0.08),
-    0 24px 48px rgba(27, 20, 16, 0.04);
+  --deep: #0d160e;
+  --shadow-warm: 0 1px 2px rgba(53, 34, 26, 0.06), 0 12px 32px rgba(53, 34, 26, 0.1);
 }
 
 @theme inline {
@@ -26,14 +27,15 @@
   --color-cream: var(--cream);
   --color-surface: var(--surface);
   --color-ink: var(--ink);
+  --color-deep: var(--deep);
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-success: var(--success);
-  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-dm), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
-  --radius-card: 24px;
-  --shadow-warm: var(--shadow-warm);
+  --font-display: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist), ui-sans-serif, sans-serif;
+  --radius-card: 22px;
+  --shadow-warm: 0 1px 2px rgba(53, 34, 26, 0.06), 0 12px 32px rgba(53, 34, 26, 0.1);
   --animate-marquee: marquee 38s linear infinite;
   --animate-float: float 7s ease-in-out infinite;
   @keyframes marquee {
@@ -64,4 +66,12 @@ body { background: var(--cream); color: var(--ink); font-family: var(--font-sans
   html { scroll-behavior: auto; }
   .animate-marquee, .animate-float { animation: none !important; }
   * { transition-duration: 0.01ms !important; }
+}
+
+
+
+.font-display { text-transform: uppercase; }
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: 9; pointer-events: none; opacity: 0.07; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
 }

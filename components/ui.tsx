@@ -10,7 +10,7 @@ export function Button({
   const styles = {
     primary: "bg-orange text-white hover:bg-orange-hover hover:shadow-[0_10px_30px_rgba(242,106,27,0.4)]",
     secondary: "border border-line bg-surface text-ink hover:shadow-[0_10px_30px_rgba(242,106,27,0.18)]",
-    white: "bg-white text-ink hover:shadow-[0_10px_30px_rgba(27,20,16,0.25)]",
+    white: "bg-white text-black hover:shadow-[0_10px_30px_rgba(27,20,16,0.25)]",
   }[variant];
   const external = href.startsWith("http");
   return (
@@ -43,4 +43,4 @@ export function Mark({ children }: { children: ReactNode }) {
 
 export const card = "rounded-card border border-line bg-surface shadow-warm";
 export const section = "mx-auto w-full max-w-6xl px-5 sm:px-8";
-export const h2 = "font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl";
+export const h2 = "font-display text-5xl font-bold leading-[0.95] tracking-[0.005em] sm:text-7xl";

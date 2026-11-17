@@ -16,7 +16,7 @@ export function Faq() {
             {faq.items.map((item, i) => {
               const isOpen = open === i;
               return (
-                <li key={item.q} className={`overflow-hidden rounded-[1.75rem] transition-colors duration-300 ${isOpen ? "bg-surface shadow-warm" : "bg-orange-tint/60"}`}>
+                <li key={item.q} className={`overflow-hidden rounded-[1.5rem] transition-colors duration-300 ${isOpen ? "bg-surface shadow-warm" : "bg-orange-tint/60"}`}>
                   <h3>
                     <button
                       type="button"
@@ -24,10 +24,10 @@ export function Faq() {
                       aria-controls={`faq-${i}`}
                       id={`faq-btn-${i}`}
                       onClick={() => setOpen(isOpen ? null : i)}
-                      className="flex w-full items-center justify-between gap-4 p-5 text-left font-display text-xl font-bold tracking-tight sm:p-6 sm:text-2xl"
+                      className="flex w-full items-center justify-between gap-4 p-5 text-left font-display text-xl font-bold tracking-[0.005em] sm:p-6 sm:text-2xl"
                     >
                       {item.q}
-                      <span className={`flex size-9 shrink-0 items-center justify-center rounded-full bg-white text-orange-ink transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
+                      <span className={`flex size-9 shrink-0 items-center justify-center rounded-full bg-orange text-white transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
                         <ChevronDown aria-hidden strokeWidth={1.75} className="size-5" />
                       </span>
                     </button>
