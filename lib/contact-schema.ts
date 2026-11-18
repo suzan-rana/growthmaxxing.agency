@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const needs = ["Lead follow-up", "AI receptionist", "Ad creative", "A mix", "Not sure"] as const;
+export const needs = ["Lead follow-up", "AI receptionist", "Sales agent", "Ad creative", "A mix", "Not sure"] as const;
 export const budgets = ["Not spending yet", "Under $2k", "$2k-$10k", "$10k+"] as const;
 
 export const contactSchema = z.object({

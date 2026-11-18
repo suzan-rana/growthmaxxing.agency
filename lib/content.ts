@@ -1,4 +1,4 @@
-import { BarChart3, Clapperboard, MessageSquareText, PhoneCall, UserSearch, Workflow, type LucideIcon } from "lucide-react";
+import { BarChart3, Clapperboard, Handshake, MessageSquareText, PhoneCall, UserSearch, Workflow, type LucideIcon } from "lucide-react";
 
 // ---------------------------------------------------------------------------
 // All site copy lives here. Replace the PLACEHOLDER values before launch.
@@ -39,7 +39,8 @@ export const hero = {
     { agent: "voice-agent", text: "Missed call answered, quote request qualified", t: "21:58" },
     { agent: "recruit-agent", text: "Screened 14 applicants, 3 interviews scheduled", t: "06:02" },
     { agent: "admin-agent", text: "Invoice #1042 sent, 2 overdue reminders queued", t: "07:15" },
-    { agent: "ads-agent", text: "Rotated 4 hooks, paused 1 underperformer", t: "08:30" },
+    { agent: "sales-agent", text: "Sent 40 personalised emails, 3 replies, 1 meeting booked", t: "08:30" },
+    { agent: "ads-agent", text: "Rotated 4 hooks, paused 1 underperformer", t: "08:45" },
     { agent: "report-agent", text: "Weekly read drafted, ready for your approval", t: "09:00" },
   ],
   mockLabel: "Illustrative log, not a real client",
@@ -83,6 +84,13 @@ export const services = {
       outcome: "Answers calls, qualifies the caller, and books the job.",
       tags: ["24/7", "Missed-call text-back", "Booking"],
       icon: PhoneCall,
+    },
+    {
+      title: "AI sales agent",
+      slug: "sales-agent",
+      outcome: "Finds and researches prospects, sends personalised outreach, handles replies and books qualified meetings into your calendar.",
+      tags: ["Outbound", "Qualification", "Meeting booking"],
+      icon: Handshake,
     },
     {
       title: "AI ad creative",
@@ -196,7 +204,7 @@ export const cta = {
 export const footer = {
   tagline: "AI growth systems that find customers, answer them fast, and follow up until they buy.",
   columns: [
-    { title: "Services", links: [{ label: "Lead capture", href: "#services" }, { label: "AI receptionist", href: "#services" }, { label: "AI ad creative", href: "#services" }, { label: "Recruitment", href: "#services" }, { label: "Admin agents", href: "#services" }, { label: "Reporting", href: "#services" }] },
+    { title: "Services", links: [{ label: "Lead capture", href: "#services" }, { label: "AI receptionist", href: "#services" }, { label: "AI sales agent", href: "#services" }, { label: "AI ad creative", href: "#services" }, { label: "Recruitment", href: "#services" }, { label: "Admin agents", href: "#services" }, { label: "Reporting", href: "#services" }] },
     { title: "Process", links: [{ label: "How it works", href: "#process" }, { label: "The weekly loop", href: "#loop" }, { label: "Proof", href: "#proof" }] },
     { title: "FAQ", links: [{ label: "Ownership", href: "#faq" }, { label: "Results", href: "#faq" }, { label: "Timing", href: "#faq" }] },
     { title: "Contact", links: [{ label: "Request a review", href: "#contact" }, { label: site.email, href: `mailto:${site.email}` }] },
