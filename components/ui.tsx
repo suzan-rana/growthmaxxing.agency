@@ -1,46 +1,27 @@
-import { ArrowRight, type LucideIcon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
 
-const btn =
-  "group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[1.1667rem] font-bold leading-none transition duration-200 hover:-translate-y-0.5 active:translate-y-0 motion-reduce:hover:translate-y-0";
-
 export function Button({
-  href, children, variant = "primary", className = "", arrow = true,
-}: { href: string; children: ReactNode; variant?: "primary" | "secondary" | "white"; className?: string; arrow?: boolean }) {
+  href, children, variant = "primary", className = "",
+}: { href: string; children: ReactNode; variant?: "primary" | "secondary" | "inverse"; className?: string }) {
   const styles = {
-    primary: "bg-orange text-white hover:bg-orange-hover hover:shadow-[0_10px_30px_rgba(242,106,27,0.4)]",
-    secondary: "border border-line bg-surface text-ink hover:shadow-[0_10px_30px_rgba(242,106,27,0.18)]",
-    white: "bg-white text-black hover:shadow-[0_10px_30px_rgba(27,20,16,0.25)]",
+    primary: "bg-ink text-paper hover:bg-accent",
+    secondary: "border border-ink text-ink hover:bg-ink hover:text-paper",
+    inverse: "bg-ink text-paper hover:bg-paper hover:text-ink",
   }[variant];
   const external = href.startsWith("http");
   return (
-    <a href={href} className={`${btn} ${styles} ${className}`} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+    <a href={href} className={`group inline-flex items-center gap-3 rounded-sm px-5 py-3.5 text-[0.95rem] font-medium leading-none transition-colors duration-150 ${styles} ${className}`}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
       {children}
-      {arrow && <ArrowRight aria-hidden strokeWidth={1.75} className="size-5 transition-transform group-hover:translate-x-0.5" />}
+      <ArrowUpRight aria-hidden strokeWidth={1.75} className="size-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
     </a>
   );
 }
 
-export function Chip({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return (
-    <span className={`inline-flex items-center rounded-full bg-orange-tint px-4 py-1.5 font-mono text-xs font-medium uppercase tracking-[0.12em] text-orange-ink ${className}`}>
-      {children}
-    </span>
-  );
+export function Label({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <p className={`font-mono text-[0.72rem] uppercase tracking-[0.1em] text-muted ${className}`}>{children}</p>;
 }
 
-export function IconCircle({ icon: Icon, className = "" }: { icon: LucideIcon; className?: string }) {
-  return (
-    <span className={`inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-orange-tint text-orange-ink ${className}`}>
-      <Icon aria-hidden strokeWidth={1.75} className="size-6" />
-    </span>
-  );
-}
-
-export function Mark({ children }: { children: ReactNode }) {
-  return <span className="mark">{children}</span>;
-}
-
-export const card = "rounded-card border border-line bg-surface shadow-warm";
-export const section = "mx-auto w-full max-w-6xl px-5 sm:px-8";
-export const h2 = "font-display text-5xl font-bold leading-[0.95] tracking-[0.005em] sm:text-7xl";
+export const section = "mx-auto w-full max-w-[84rem] px-5 sm:px-10";
+export const h2 = "font-display text-5xl leading-[0.98] sm:text-7xl";

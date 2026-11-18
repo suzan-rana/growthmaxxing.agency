@@ -7,7 +7,7 @@ import { BarChart3, Clapperboard, MessageSquareText, PhoneCall, UserSearch, Work
 export const site = {
   name: "growthmaxxing",
   url: "https://growthmaxxing.agency",
-  title: "Growthmaxxing | AI agents for sales, hiring and admin",
+  title: "Growthmaxxing | AI agency building agents for sales, hiring and ops",
   description:
     "Growthmaxxing builds AI agents that find customers, answer them instantly, follow up until they buy, recruit your team and run the back office. Done for you, owned by you.",
   email: "hello@growthmaxxing.agency", // PLACEHOLDER: confirm inbox exists
@@ -26,24 +26,23 @@ export const nav = {
 };
 
 export const hero = {
-  chip: "AI agents for sales, hiring and admin",
-  headline: ["More leads.", "Faster replies.", "Less busywork."],
-  body: "Growthmaxxing builds AI agents that find customers, answer them instantly, follow up until they buy, recruit your team and run the back office. Done for you, owned by you.",
+  chip: "Booking three founding clients",
+  headline: ["AI agents that answer your leads, screen your hires and chase your invoices."],
+  body: "Growthmaxxing is a small AI agency. We build agents inside the tools you already pay for, run them for you, and report the numbers every week. You own every account and prompt.",
   primary: "Book a free 30-min call",
-  secondary: "See how it works",
+  secondary: "See the agents",
   note: "For businesses that already have demand and are losing it to slow replies, thin follow-up, or tired ads.",
-  strip: [
-    "Lead capture",
-    "AI voice receptionist",
-    "Follow-up automation",
-    "Recruitment agent",
-    "Admin agents",
-    "AI ad creative",
-    "Landing pages",
-    "Tracking",
-    "Weekly reporting",
+  strip: ["HubSpot", "Slack", "WhatsApp", "Gmail", "Google Calendar", "Stripe", "Notion", "Twilio", "Zapier", "n8n", "Airtable", "Xero"],
+  stripLabel: "Plugs into the tools you already use",
+  console: [
+    { agent: "lead-agent", text: "Replied to Jordan in 9s, call booked Thu 2:30", t: "21:41" },
+    { agent: "voice-agent", text: "Missed call answered, quote request qualified", t: "21:58" },
+    { agent: "recruit-agent", text: "Screened 14 applicants, 3 interviews scheduled", t: "06:02" },
+    { agent: "admin-agent", text: "Invoice #1042 sent, 2 overdue reminders queued", t: "07:15" },
+    { agent: "ads-agent", text: "Rotated 4 hooks, paused 1 underperformer", t: "08:30" },
+    { agent: "report-agent", text: "Weekly read drafted, ready for your approval", t: "09:00" },
   ],
-  mockLabel: "Illustrative example, not a real client",
+  mockLabel: "Illustrative log, not a real client",
   mock: {
     source: "Website enquiry",
     lead: "Hi, can I get a quote for a kitchen refit? Is anyone free this week?",
@@ -57,6 +56,7 @@ export const hero = {
 
 export type Service = {
   title: string;
+  slug: string;
   outcome: string;
   tags: string[];
   icon: LucideIcon;
@@ -64,12 +64,13 @@ export type Service = {
 };
 
 export const services = {
-  heading: "AI agents for every part of the business.",
-  intro: "Sales, hiring and back office. Start with the one that fixes your biggest leak, then add more agents as you grow.",
+  heading: "A team of AI agents, built around your business.",
+  intro: "Not a chatbot bolted onto a website. Agents that take real actions in your CRM, inbox, calendar and phone lines. Start with the one that fixes your biggest leak, then add more.",
   flagshipLabel: "Flagship",
   items: [
     {
       title: "Lead capture and follow-up",
+      slug: "lead-agent",
       outcome:
         "Every enquiry gets a reply in seconds and a follow-up until it books or says no. Forms, WhatsApp, SMS and email sequences, all synced to your CRM.",
       tags: ["CRM sync", "Nurture", "No lead left behind"],
@@ -78,30 +79,35 @@ export const services = {
     },
     {
       title: "AI voice receptionist",
+      slug: "voice-agent",
       outcome: "Answers calls, qualifies the caller, and books the job.",
       tags: ["24/7", "Missed-call text-back", "Booking"],
       icon: PhoneCall,
     },
     {
       title: "AI ad creative",
+      slug: "ads-agent",
       outcome: "UGC-style video and static ads for Meta and TikTok, tested every week.",
       tags: ["Hooks", "Variations", "Testing"],
       icon: Clapperboard,
     },
     {
       title: "Reporting and tracking",
+      slug: "report-agent",
       outcome: "Clean tracking, and a weekly written update with your real numbers.",
       tags: ["Pixel/CAPI", "UTMs", "Weekly read"],
       icon: BarChart3,
     },
     {
       title: "Recruitment agent",
+      slug: "recruit-agent",
       outcome: "Posts roles, screens applicants, books interviews and keeps candidates warm, so hiring stops eating your week.",
       tags: ["Screening", "Scheduling", "Candidate follow-up"],
       icon: UserSearch,
     },
     {
       title: "Admin agents",
+      slug: "admin-agent",
       outcome: "Back-office jobs done for you: invoicing, data entry, inbox triage, bookings and reports, running in the background.",
       tags: ["Invoicing", "Inbox", "Data entry", "Ops"],
       icon: Workflow,
@@ -135,7 +141,7 @@ export const proof = {
 };
 
 export const statement = {
-  text: "Everyone has the same AI tools now. The difference is who sets them up around your business and keeps them honest.",
+  text: "Everyone has access to the same models. The edge is who wires them into your business, tunes them on your data, and keeps them honest.",
   sign: `Growthmaxxing · ${site.year}`,
 };
 

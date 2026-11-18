@@ -1,40 +1,32 @@
 import { footer } from "@/lib/content";
 import { Logo } from "./Navbar";
-import { section } from "./ui";
+import { Label, section } from "./ui";
 
 export function Footer() {
   return (
-    <footer className="bg-deep text-white">
-      <div className={`${section} grid gap-10 py-14 lg:grid-cols-[1.3fr_2fr]`}>
+    <footer>
+      <div className={`${section} grid gap-12 py-16 lg:grid-cols-[1.2fr_2fr]`}>
         <div>
-          <Logo light />
-          <p className="mt-4 max-w-xs text-white/60">{footer.tagline}</p>
-          <ul className="mt-5 flex flex-wrap gap-2">
-            {footer.socials.map((s) => (
-              <li key={s.label}>
-                <a href={s.href} className="rounded-full border border-white/20 px-4 py-2 font-mono text-xs font-medium uppercase tracking-[0.12em] text-white/80 transition hover:bg-orange hover:text-white">{s.label}</a>
-              </li>
-            ))}
+          <Logo />
+          <p className="mt-4 max-w-xs text-muted">{footer.tagline}</p>
+          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {footer.socials.map((s) => <li key={s.label}><a href={s.href} className="underline underline-offset-4 hover:text-accent-ink">{s.label}</a></li>)}
           </ul>
         </div>
         <nav aria-label="Footer" className="grid grid-cols-2 gap-8 sm:grid-cols-4">
           {footer.columns.map((c) => (
             <div key={c.title}>
-              <h2 className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-orange-glow">{c.title}</h2>
+              <Label>{c.title}</Label>
               <ul className="mt-4 space-y-2.5">
-                {c.links.map((l) => (
-                  <li key={l.label}><a href={l.href} className="break-words text-sm text-white/60 transition hover:text-white">{l.label}</a></li>
-                ))}
+                {c.links.map((l) => <li key={l.label}><a href={l.href} className="break-words text-sm hover:text-accent-ink">{l.label}</a></li>)}
               </ul>
             </div>
           ))}
         </nav>
       </div>
-      <div className={`${section} flex flex-wrap items-center justify-between gap-3 pb-8 text-sm text-white/50`}>
+      <div className={`${section} flex flex-wrap items-center justify-between gap-3 border-t border-line py-6 text-sm text-muted`}>
         <p>{footer.copyright}</p>
-        <ul className="flex gap-5">
-          {footer.legal.map((l) => <li key={l.label}><a href={l.href} className="hover:text-white">{l.label}</a></li>)}
-        </ul>
+        <ul className="flex gap-5">{footer.legal.map((l) => <li key={l.label}><a href={l.href} className="hover:text-ink">{l.label}</a></li>)}</ul>
       </div>
     </footer>
   );
