@@ -30,16 +30,17 @@ export function Hero() {
       <div className="mx-auto w-full max-w-[84rem] px-5 sm:px-10">
         <Label>{hero.chip}</Label>
         <h1 className="mt-6 max-w-[16ch] font-display text-[3.2rem] leading-[0.95] min-[420px]:text-[4rem] sm:max-w-[18ch] sm:text-[6.5rem] lg:text-[8rem]">
-          AI agents that <em>answer</em> your leads, <em>screen</em> your hires and <em>chase</em> your invoices.
+          Stop paying for leads you <em>lose</em> to slow replies.
         </h1>
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_22rem] lg:items-end">
           <p className="max-w-xl text-lg leading-relaxed text-muted sm:text-xl">{hero.body}</p>
           <div className="flex flex-wrap gap-3 lg:justify-end">
             <Button href={site.calendarUrl}>{hero.primary}</Button>
-            <Button href="#services" variant="secondary">{hero.secondary}</Button>
+            <Button href="#leak" variant="secondary">Work out what you are losing</Button>
           </div>
         </div>
-        <p className="mt-16 text-sm text-muted">
+        <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-1 font-mono text-xs uppercase tracking-[0.08em] text-muted"><li>Free 30-min audit</li><li>Fixed price</li><li>You own everything</li></ul>
+        <p className="mt-14 text-sm text-muted">
           <span className="font-mono text-[0.72rem] uppercase tracking-[0.1em]">{hero.stripLabel}: </span>
           {hero.strip.join(", ")}.
         </p>

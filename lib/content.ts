@@ -22,14 +22,14 @@ export const nav = {
     { label: "Process", href: "#process" },
     { label: "FAQ", href: "#faq" },
   ],
-  cta: "Book a call",
+  cta: "Get free audit",
 };
 
 export const hero = {
-  chip: "Booking three founding clients",
+  chip: "Founding offer: 3 spots, fixed-price sprint",
   headline: ["AI agents that answer your leads, screen your hires and chase your invoices."],
-  body: "Growthmaxxing is a small AI agency. We build agents inside the tools you already pay for, run them for you, and report the numbers every week. You own every account and prompt.",
-  primary: "Book a free 30-min call",
+  body: "Our AI agents reply to every enquiry in seconds, book the call, and follow up until they buy. Built in your own tools in 4 weeks, at a fixed price, with a written results review at the end.",
+  primary: "Get my free lead-leak audit",
   secondary: "See the agents",
   note: "For businesses that already have demand and are losing it to slow replies, thin follow-up, or tired ads.",
   strip: ["HubSpot", "Slack", "WhatsApp", "Gmail", "Google Calendar", "Stripe", "Notion", "Twilio", "Zapier", "n8n", "Airtable", "Xero"],
@@ -178,8 +178,8 @@ export const faq = {
 };
 
 export const contact = {
-  heading: "Request a free growth review.",
-  body: "Tell us where you are losing customers. You get either a starting plan or an honest answer that we are not the right fit.",
+  heading: "Get your free lead-leak audit.",
+  body: "Tell us where leads are slipping. In 30 minutes you get a ranked list of your biggest leaks and what each is likely costing you. Use it with us or without us.",
   cta: "Book a 30-minute call",
   emailLabel: "Or email",
   privacy: "We use your details only to reply to this request. No newsletters, no sharing.",
@@ -188,9 +188,9 @@ export const contact = {
 };
 
 export const cta = {
-  heading: "Let's find your biggest leak.",
-  body: "Thirty minutes, and an honest answer on whether we can help.",
-  button: "Book a 30-min call",
+  heading: "Find out what slow replies are costing you.",
+  body: "Free 30-minute audit. No deck, no pressure, and an honest answer on whether we can help.",
+  button: "Get my free audit",
 };
 
 export const footer = {
@@ -213,4 +213,11 @@ export const footer = {
     { label: "Privacy", href: "#" }, // PLACEHOLDER
     { label: "Terms", href: "#" }, // PLACEHOLDER
   ],
+};
+
+export const leak = {
+  label: "The cost of slow replies",
+  heading: "What are unanswered leads costing you each month?",
+  note: "Rough estimate from your own numbers, not a promise. The audit replaces these guesses with your real ones.",
+  cta: "Plug the leak: get the free audit",
 };

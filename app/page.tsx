@@ -3,6 +3,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
+import { LeakCalc } from "@/components/LeakCalc";
 import { Navbar } from "@/components/Navbar";
 import { Process } from "@/components/Process";
 import { Proof } from "@/components/Proof";
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <LeakCalc />
         <Services />
         <Proof />
         <Statement />
